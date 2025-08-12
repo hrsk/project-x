@@ -1,8 +1,8 @@
 import '@/app/styles/index.scss'
 import {Link} from "react-router-dom";
-import {useTheme} from "@/app/providers/ThemeProvider/lib/useTheme";
 import { classNames } from '@/shared/lib';
 import {AppRouter} from "@/app/router";
+import {useTheme} from "@/app/providers";
 
 export const App = () => {
 
