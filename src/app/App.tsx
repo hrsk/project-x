@@ -1,11 +1,9 @@
-import '@/styles/index.scss'
+import '@/app/styles/index.scss'
 import {Link, Route, Routes} from "react-router-dom";
 import {Suspense} from "react";
-import {Loading} from "@/components/Loading";
-import {MainLazy} from "@/components/pages/main/Main.lazy";
-import {useTheme} from "@/styles/theme/useTheme";
-import {classNames} from "@/helpers/classNames/classNames";
-import {AboutLazy} from "@/components/pages/about/About.lazy";
+import {useTheme} from "@/app/providers/ThemeProvider/lib/useTheme";
+import {classNames} from "@/shared/lib/classNames/classNames";
+import {About, Main, Loading} from "@/pages";
 
 export const App = () => {
 
@@ -18,8 +16,8 @@ export const App = () => {
             <Link to={'/about'}>About</Link>
             <Suspense fallback={<Loading/>}>
                 <Routes>
-                    <Route path={'/'} element={<MainLazy/>}/>
-                    <Route path={'/about'} element={<AboutLazy/>}/>
+                    <Route path={'/'} element={<Main/>}/>
+                    <Route path={'/about'} element={<About/>}/>
                 </Routes>
             </Suspense>
 
