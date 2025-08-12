@@ -5,13 +5,14 @@ import {Loading} from "./components/Loading";
 import {MainLazy} from "./components/pages/main/Main.lazy";
 import {AboutLazy} from "./components/pages/about/About.lazy";
 import {useTheme} from "./styles/theme/useTheme";
+import {classNames} from "./helpers/classNames/classNames";
 
 export const App = () => {
 
     const {theme, toggleTheme} = useTheme()
 
     return (
-        <div className={`app ${theme}`}>
+        <div className={classNames('app', {}, [theme])}>
             <button onClick={toggleTheme}>toggleTheme</button>
             <Link to={'/'}>Main</Link>
             <Link to={'/about'}>About</Link>
