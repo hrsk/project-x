@@ -1,7 +1,12 @@
 import {classNames} from "@/shared/lib";
 import styles from './Header.module.scss';
-import {useTheme} from "@/app/providers";
 import {AppLink, AppLinkTheme} from "@/shared/ui/AppLink";
+import {Button, ButtonThemeStyles} from "@/shared/ui/Button/Button";
+import LightThemeIcon from '@/shared/assets/icons/theme-light.svg';
+import DarkThemeIcon from '@/shared/assets/icons/theme-dark.svg';
+import {useTheme, Theme} from "@/app/providers/ThemeProvider";
+
+import avatar from '@/shared/assets/icons/user-32-32.png'
 
 interface Header {
     className?: string
@@ -11,7 +16,7 @@ export const Header = (props: Header) => {
 
     const {className} = props;
 
-    const {toggleTheme} = useTheme()
+    const {theme: appTheme} = useTheme();
 
     return (
         <div className={classNames({cls: styles.header, mods: {}, additional: [className]})}>
@@ -23,9 +28,9 @@ export const Header = (props: Header) => {
                     О сайте
                 </AppLink>
             </div>
-            <button className={classNames({cls: styles.toggle, mods: {}, additional: []})}
-                    onClick={toggleTheme}>toggleTheme
-            </button>
+            <Button theme={ButtonThemeStyles.UNSTYLED}>
+                {appTheme === Theme.LIGHT ? <LightThemeIcon/> : <DarkThemeIcon/>}
+            </Button>
         </div>
     )
 }
