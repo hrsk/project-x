@@ -3,6 +3,7 @@ import {classNames} from '@/shared/lib';
 import {AppRouter} from "@/app/router";
 import {useTheme} from "@/app/providers";
 import {Header} from "@/widgets/Header";
+import {Sidebar} from "@/widgets/Sidebar/ui/Sidebar/Sidebar";
 
 export const App = () => {
 
@@ -11,7 +12,10 @@ export const App = () => {
     return (
         <div className={classNames({cls: 'app', mods: {}, additional: [theme]})}>
             <Header/>
-            <AppRouter/>
+            <div className={"content"}>
+                <Sidebar/>
+                <AppRouter/>
+            </div>
         </div>
     )
 }
