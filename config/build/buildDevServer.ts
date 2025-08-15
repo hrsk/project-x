@@ -8,7 +8,7 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
         open: {
             app: 'Google Chrome'
         },
-        hot: false,
+        hot: true,
         historyApiFallback: true,
     }
 }
