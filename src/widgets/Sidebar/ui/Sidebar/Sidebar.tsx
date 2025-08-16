@@ -25,7 +25,7 @@ export const Sidebar = (props: Sidebar) => {
             mods: {[styles.collapsed]: collapsed},
             additional: [className]
         })}>
-            <Button theme={ButtonThemeStyles.DEFAULT} onClick={toggleHandler} children={'toggle'}/>
+            <Button theme={ButtonThemeStyles.DEFAULT} onClick={toggleHandler} >toggle</Button>
             <div className={classNames({cls: styles.switchers, mods: {}, additional: [className]})}>
                 <ThemeSwitcher/>
                 <LanguageSwitcher className={styles.switch}/>

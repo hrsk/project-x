@@ -20,12 +20,12 @@ export const AppLink = (props: AppLink) => {
 
     return (
         <Link to={to}
-              className={classNames({
-                  cls: styles.AppLink,
-                  mods: {},
-                  additional: [className, styles[theme]]
-              })}
-              {...otherProps}
+            className={classNames({
+                cls: styles.AppLink,
+                mods: {},
+                additional: [className, styles[theme]]
+            })}
+            {...otherProps}
         >
             {children}
         </Link>

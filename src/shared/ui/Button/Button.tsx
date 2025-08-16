@@ -22,7 +22,7 @@ export const Button = (props: Button) => {
 
     return (
         <button className={classNames({cls: styles.button, mods: {}, additional: [styles[theme], className]})}
-                onClick={toggleTheme} {...otherProps}>{children}
+            onClick={toggleTheme} {...otherProps}>{children}
         </button>
     )
 }

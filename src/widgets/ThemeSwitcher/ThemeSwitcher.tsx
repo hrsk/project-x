@@ -17,7 +17,7 @@ export const ThemeSwitcher = (props: ThemeSwitcher) => {
 
     return (
         <Button theme={ButtonThemeStyles.UNSTYLED}
-                className={classNames({cls: styles.toggleTheme, mods: {}, additional: [className]})}>
+            className={classNames({cls: styles.toggleTheme, mods: {}, additional: [className]})}>
             {appTheme === Theme.LIGHT ? <LightThemeIcon/> : <DarkThemeIcon/>}
         </Button>
     )

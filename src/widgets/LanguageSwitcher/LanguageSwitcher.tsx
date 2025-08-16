@@ -13,14 +13,14 @@ export const LanguageSwitcher = (props: Props) => {
 
     const {t, i18n} = useTranslation()
 
-    const translateHandler = () => {
-        i18n.changeLanguage(i18n.language === 'en' ? 'ru' : 'en')
+    const translateHandler = async () => {
+        await i18n.changeLanguage(i18n.language === 'en' ? 'ru' : 'en')
     }
 
     return (
         <Button className={classNames({cls: styles.langSwitch, mods: {}, additional: [className]})}
-                theme={ButtonThemeStyles.DEFAULT}
-                onClick={translateHandler}>{t('Language')}</Button>
+            theme={ButtonThemeStyles.DEFAULT}
+            onClick={translateHandler}>{t('Language')}</Button>
     )
 }
 

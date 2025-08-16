@@ -13,7 +13,7 @@ export function classNames(props: ClassNames): string {
     return [
         cls,
         ...Object.entries(mods)
-            .filter(([className, value]) => Boolean(value))
+            .filter(([_, value]) => Boolean(value))
             .map(([className]) => className),
         ...additional,
     ].join(' ');
